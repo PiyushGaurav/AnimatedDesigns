@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import DesignOne from './src/screens/DesignOne';
+import DesignTwo from './src/screens/DesignTwo';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,11 @@ function App() {
         <Stack.Screen
           name="DesignOne"
           component={DesignOne}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="DesignTwo"
+          component={DesignTwo}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

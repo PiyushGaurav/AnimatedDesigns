@@ -14,8 +14,8 @@ import CommonStyles from '../theme/CommonStyles';
 import {Fonts} from '../theme/Fonts';
 
 const screenArray = [
-  {screenName: 'Design One', route: 'DesignOne'},
-  {screenName: 'Design Two', route: ''},
+  {screenName: 'Animated Header', route: 'DesignOne'},
+  {screenName: 'Parallax effect', route: 'DesignTwo'},
   {screenName: 'Design Three', route: ''},
   {screenName: 'Design Four', route: ''},
   {screenName: 'Design Five', route: ''},
