@@ -12,18 +12,19 @@ import React from 'react';
 import Colors from '../theme/Colors';
 import CommonStyles from '../theme/CommonStyles';
 import {Fonts} from '../theme/Fonts';
+import navigationStrings from '../../constants/navigationStrings';
 
 const screenArray = [
-  {screenName: 'Animated Header', route: 'DesignOne'},
-  {screenName: 'Parallax effect', route: 'DesignTwo'},
-  {screenName: 'Design Three', route: ''},
+  {screenName: 'Animated Header', route: navigationStrings.DESIGN_ONE},
+  {screenName: 'Parallax effect', route: navigationStrings.DESIGN_TWO},
+  {screenName: 'Design Three', route: navigationStrings.DESIGN_THREE},
   {screenName: 'Design Four', route: ''},
   {screenName: 'Design Five', route: ''},
 ];
 
 const {width} = Dimensions.get('screen');
 export default function HomeScreen({navigation}) {
-  function renderBox({item}) {
+  const renderBox = ({item}) => {
     return (
       <TouchableOpacity
         onPress={() => {
@@ -33,7 +34,11 @@ export default function HomeScreen({navigation}) {
         <Text style={styles.boxText}>{item.screenName}</Text>
       </TouchableOpacity>
     );
-  }
+  };
+
+  const listHeaderComponent = () => (
+    <Text style={[styles.header]}>Choose Designs</Text>
+  );
 
   return (
     <SafeAreaView style={styles.container}>
@@ -43,6 +48,7 @@ export default function HomeScreen({navigation}) {
         renderItem={renderBox}
         numColumns={2}
         item
+        ListHeaderComponent={listHeaderComponent}
       />
     </SafeAreaView>
   );
@@ -51,7 +57,13 @@ export default function HomeScreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.secandory,
+  },
+  header: {
+    ...Fonts.bold(30),
+    textTransform: 'uppercase',
+    textAlign: 'center',
+    padding: 10,
   },
   box: {
     flex: 1,
@@ -60,10 +72,11 @@ const styles = StyleSheet.create({
     margin: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.secandory,
+    backgroundColor: Colors.primary,
     ...CommonStyles.shadowStyle,
   },
   boxText: {
-    ...Fonts.medium(18),
+    ...Fonts.bold(18),
+    color: Colors.secandory,
   },
 });
