@@ -4,7 +4,7 @@ export default {
   primary: '#642CA9',
   red: '#FF0000',
   green: '#008000',
-  secandory: '#EBE76C',
+  secondary: '#EBE76C',
   pallete1: '#EBE76C',
   pallete2: '#DBD074',
   pallete3: '#B9A284',

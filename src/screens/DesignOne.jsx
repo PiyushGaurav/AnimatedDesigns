@@ -40,9 +40,11 @@ export default function DesignOne() {
   );
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: Colors.primary}}>
+    <View style={{flex: 1, backgroundColor: Colors.primary}}>
+      <SafeAreaView />
       <Animated.View
         style={[styles.header, {transform: [{translateY: headerTranslation}]}]}>
+        <SafeAreaView />
         <Text style={{...Fonts.medium(18)}}>Header</Text>
       </Animated.View>
       <Animated.FlatList
@@ -79,7 +81,8 @@ export default function DesignOne() {
           <Text style={{...Fonts.medium(18)}}>Scroll to Top</Text>
         </Animated.View>
       </TouchableOpacity>
-    </SafeAreaView>
+      <SafeAreaView />
+    </View>
   );
 }
 
@@ -89,9 +92,9 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: 80,
+    height: 100,
     width: '100%',
-    backgroundColor: Colors.secandory,
+    backgroundColor: Colors.secondary,
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 100,
@@ -111,7 +114,7 @@ const styles = StyleSheet.create({
     bottom: 10,
     height: 50,
     width: '80%',
-    backgroundColor: Colors.secandory,
+    backgroundColor: Colors.secondary,
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 100,

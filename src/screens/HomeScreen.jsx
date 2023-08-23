@@ -57,7 +57,7 @@ export default function HomeScreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.secandory,
+    backgroundColor: Colors.secondary,
   },
   header: {
     ...Fonts.bold(30),
@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
   },
   boxText: {
     ...Fonts.bold(18),
-    color: Colors.secandory,
+    color: Colors.secondary,
   },
 });

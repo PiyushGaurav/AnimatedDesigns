@@ -1,6 +1,8 @@
+/* eslint-disable react-native/no-inline-styles */
 import {Animated, Image, StyleSheet, Dimensions, View} from 'react-native';
 import React, {useRef} from 'react';
 import CommonStyles from '../theme/CommonStyles';
+import Colors from '../theme/Colors';
 
 const {height, width} = Dimensions.get('screen');
 const data = [
@@ -56,13 +58,13 @@ export default function DesignThree() {
             index * ITEM_WIDTH,
             (index + 1) * ITEM_WIDTH,
           ];
-
           const opacityInterpolated = scrollX.interpolate({
             inputRange,
             outputRange: [0, 1, 0],
           });
           return (
             <Animated.Image
+              key={item.id}
               source={{
                 uri: item.uri,
               }}
@@ -95,10 +97,37 @@ export default function DesignThree() {
               },
             },
           ],
-          {useNativeDriver: true},
+          {useNativeDriver: false},
         )}
         renderItem={renderRow}
       />
+      <View style={styles.dotContainer}>
+        {data.map((item, index) => {
+          const inputRange = [
+            (index - 1) * ITEM_WIDTH,
+            index * ITEM_WIDTH,
+            (index + 1) * ITEM_WIDTH,
+          ];
+
+          let dotWidth = scrollX.interpolate({
+            inputRange,
+            outputRange: [10, 30, 10],
+            extrapolate: 'clamp',
+          });
+          return (
+            <Animated.View
+              key={item.id}
+              style={[
+                styles.dot,
+                {
+                  width: dotWidth,
+                  backgroundColor: Colors.secondary,
+                },
+              ]}
+            />
+          );
+        })}
+      </View>
     </View>
   );
 }
@@ -115,5 +144,18 @@ const styles = StyleSheet.create({
     height: IMAGE_HEIGHT,
     ...CommonStyles.shadowStyle,
     borderRadius: 20,
+  },
+  dotContainer: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 100,
+    alignSelf: 'center',
+    alignItems: 'center',
+  },
+  dot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    marginHorizontal: 5,
   },
 });

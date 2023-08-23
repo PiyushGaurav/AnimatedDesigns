@@ -28,8 +28,6 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.37,
     shadowRadius: 7.49,
-
-    elevation: 12,
   },
 
   viewStyles: {
@@ -41,7 +39,7 @@ export default StyleSheet.create({
     headerStyle: {
       backgroundColor: Colors.primary,
     },
-    headerTintColor: Colors.secandory,
+    headerTintColor: Colors.secondary,
     headerTitleStyle: {
       fontWeight: 'bold',
     },
