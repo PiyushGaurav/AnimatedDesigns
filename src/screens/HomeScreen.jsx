@@ -18,7 +18,7 @@ const screenArray = [
   {screenName: 'Animated Header', route: navigationStrings.DESIGN_ONE},
   {screenName: 'Parallax effect', route: navigationStrings.DESIGN_TWO},
   {screenName: 'Design Three', route: navigationStrings.DESIGN_THREE},
-  {screenName: 'Design Four', route: ''},
+  {screenName: 'Design Four', route: navigationStrings.DESIGN_FOUR},
   {screenName: 'Design Five', route: ''},
 ];
 

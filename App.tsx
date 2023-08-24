@@ -8,6 +8,7 @@ import DesignOne from './src/screens/DesignOne';
 import DesignTwo from './src/screens/DesignTwo';
 import DesignThree from './src/screens/DesignThree';
 import navigationStrings from './constants/navigationStrings';
+import DesignFour from './src/screens/DesignFour';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +34,11 @@ function App() {
         <Stack.Screen
           name={navigationStrings.DESIGN_THREE}
           component={DesignThree}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={navigationStrings.DESIGN_FOUR}
+          component={DesignFour}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
